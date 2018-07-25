@@ -1,0 +1,52 @@
+		    //经营类别
+	var lengths=$("#contentup div").length;
+     //店铺
+	
+	
+ 
+ //经营类别
+  $("#contentup div").bind("click",function(){
+			let index = $(this).index();
+            if(index!=0){
+				if($("#contentup .pinpai").eq(index).hasClass('mypinpai')){
+				    $("#contentup .pinpai").eq(index).removeClass('mypinpai');
+			     }
+				 else{
+					 	$("#contentup .pinpai").eq(index).addClass('mypinpai');
+				 }
+					
+			}
+			else{
+				if($("#contentup .pinpai").eq(0).hasClass('mypinpai')){
+				    $("#contentup .pinpai").removeClass('mypinpai');
+			     }
+				 else{
+					$("#contentup .pinpai").addClass('mypinpai');
+				 }
+				
+			}
+			    var istrue=false;
+				var isfalse=false;
+				var j=1;
+				for(j=1;j<lengths;j++){
+					if(!($("#contentup .pinpai").eq(j).hasClass('mypinpai'))){
+						istrue=true;
+					}
+				
+				}
+				if(istrue==false&&j==lengths){
+					$("#contentup .pinpai").eq(0).addClass('mypinpai');
+					}
+            
+             if(index!=0){
+             	if($("#contentup .pinpai").eq(index).hasClass('mypinpai')&&$("#contentup .pinpai").eq(0).hasClass('mypinpai')){
+             		$("#contentup .pinpai").eq(0).addClass('mypinpai')
+             	}else{		
+             		$("#contentup .pinpai").eq(0).removeClass('mypinpai');
+             	}
+             }
+        })
+
+
+
+
